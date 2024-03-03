@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Hidratación Basal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pediatric Hydration Calculator</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
 </head>
+
 <body>
-  <div class="contenedor">
-    <div class="contenedor1">
-      <h1>Hidratación Basal</h1>
-      <form>
-        <p>Peso del paciente (kg):</p>
-        <div class="input-1">
-          <input type="number" placeholder="Ingrese el peso en kg" required />
-          <button type="button">Calcular</button>
-        </div>
+  <div class="container">
+    <div class="form-container">
+      <h1>Basal Hydration</h1>
+      <form class="input-box" onsubmit="return false;">
+        <label for="weight">Patient Weight (kg):</label>
+        <input type="number" id="weight" class="number-input" placeholder="Enter weight in kg">
+        <button type="button" class="calculate-button" onclick="calculateHydration()">Calculate</button>
       </form>
     </div>
 
-    <div class="contenedor2">
-      <span>Su resultado estará aquí</span>
+    <div class="info-container">
+      <h2 id="resultHeading">Your result will be here</h2>
+      <div id="result"></div>
+      <svg id="icon" width="100px" height="100px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M16 3C16 2.44772 15.5523 2 15 2H9C8.44772 2 8 2.44772 8 3V8L3 8C2.44772 8 2 8.44771 2 9V15C2 15.5523 2.44772 16 3 16H8V21C8 21.5523 8.44772 22 9 22H15C15.5523 22 16 21.5523 16 21V16H21C21.5523 16 22 15.5523 22 15V9C22 8.44772 21.5523 8 21 8L16 8V3Z"
+          stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
     </div>
-  </div>
 </body>
+
 </html>
